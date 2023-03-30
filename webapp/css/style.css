@@ -1,0 +1,24 @@
+/* Enter your custom styles here */
+.sapUiLayoutCSSGrid .stylePageLayout {
+	background-color: #3b6f9a;
+	color: #ffffff;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.tileView .tileAnimation {
+	animation-name: fade-in;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes fade-in {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
+  

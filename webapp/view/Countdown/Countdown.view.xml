@@ -1,0 +1,81 @@
+<mvc:View
+	controllerName="com.sap.time.controller.Countdown.Countdown"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns="sap.m"
+	class="sapUiSizeCompact tileView"
+>
+	<Page showHeader="false">
+		<grid:CSSGrid
+			id="grid1"
+			gridTemplateColumns="2fr"
+			gridGap="1rem"
+		>
+			<Image
+				densityAware="true"
+				src="https://www.biddablesolutions.com/wp-content/uploads/2018/09/biddable_solutions_news_-_google_io_adastral_park-1024x538.png"
+			/>
+		</grid:CSSGrid>
+		<grid:CSSGrid
+			id="grid2"
+			gridTemplateColumns="1fr 1fr 1fr 1fr "
+			gridGap="1rem"
+		>
+			<GenericTile
+				class="tileLayout tileAnimation"
+				backgroundImage="https://wallpapers.com/images/high/naruto-face-l4vrmrhdxkac2tte.webp"
+				header="Days"
+				press="calculateTime"
+			>
+				<TileContent>
+					<FeedContent
+						value="{timer>/days}"
+						valueColor="Critical"
+					/>
+					<!-- <NumericContent value="{timer>/days}"  valueColor="Error"  withMargin="false" /> -->
+				</TileContent>
+			</GenericTile>
+			<GenericTile
+				class="tileLayout tileAnimation"
+				backgroundImage="https://wallpapers.com/images/featured/nba-xtmd671migdy7xa7.webp"
+				press="calculateTime"
+				header="Hours"
+			>
+				<TileContent>
+					<FeedContent
+						value="{timer>/hours}"
+						valueColor="Critical"
+					/>
+				</TileContent>
+			</GenericTile>
+			<GenericTile
+				class="tileLayout tileAnimation"
+				backgroundImage="https://wallpapers.com/images/featured/cute-naruto-pictures-jtmjd4ifiqi7a48s.webp"
+				header="Minutes"
+				press="calculateTime"
+			>
+				<TileContent>
+					<FeedContent
+						value="{timer>/minutes}"
+						valueColor="Critical"
+					/>
+				</TileContent>
+			</GenericTile>
+			<GenericTile
+				class="tileLayout tileAnimation"
+				header="Seconds"
+				backgroundImage="https://wallpapers.com/images/featured/nba-xtmd671migdy7xa7.webp"
+				press="calculateTime"
+				
+			>
+				<TileContent>
+					<FeedContent
+						value="{timer>/seconds}"
+						valueColor="Critical"
+					/>
+				</TileContent>
+			</GenericTile>
+		</grid:CSSGrid>
+	</Page>
+</mvc:View>

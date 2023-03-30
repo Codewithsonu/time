@@ -1,0 +1,63 @@
+<mvc:View
+	controllerName="com.sap.time.controller.covid19.covid19"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+    height="100%"
+	xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+	xmlns="sap.m"
+>
+	<Page title="Covid19APP">
+		<Panel
+			id="settingsPanel"
+			class="panelStyle"
+			expandable="true"
+			expanded="true"
+			headerText="Data"
+			width="auto"
+		>
+			<content>
+				<Button
+					press="onPressList"
+					text="Latest Count by List"
+					ariaDescribedBy="defaultButtonDescription genericButtonDescription"
+				/>
+				<Button
+					press="onPressGraph"
+					type="Accept"
+					text="Latest Count by Graph"
+					ariaDescribedBy="acceptButtonDescription genericButtonDescription"
+				/>
+
+                 
+			</content>
+		</Panel>
+        <viz:Popover id="idPopOver"></viz:Popover>
+            <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                height='100%' width="100%" vizType='line'  >
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/data}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="day"
+                                value="{day}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="total"
+                                value="{summary/total}" />
+                           
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+
+                <viz:feeds>
+                    <viz.feeds:FeedItem id='valueAxisFeed' uid="valueAxis" type="Measure"
+                        values="total" />
+				
+					
+                    <viz.feeds:FeedItem id='categoryAxisFeed' uid="categoryAxis" type="Dimension"
+                        values="day" />
+                </viz:feeds>
+            </viz:VizFrame>
+	</Page>
+</mvc:View>

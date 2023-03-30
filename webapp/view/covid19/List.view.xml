@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.sap.time.controller.covid19.List" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true" height="100%" busyIndicatorDelay="0">
+    <Page>
+		<List
+		id="myList"
+		headerText="Total confirmed Cases in Indian {Latest>/data/summary/total}"
+		footerText="Latest Covid Count"
+		items="{Latest>/data/regional}">
+		<items>
+			<StandardListItem
+				title="{Latest>loc}"
+				description="Total cases :{Latest>totalConfirmed}"
+				info="Deaths :{Latest>deaths}"
+				 />
+		</items>
+	</List>
+
+
+    </Page>
+</mvc:View>

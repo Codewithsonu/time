@@ -1,0 +1,40 @@
+<mvc:View
+	controllerName="com.sap.time.controller.View1"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+>
+	<Page
+		id="page"
+		title="{i18n>title}"
+		showHeader="false"
+	>
+		<l:VerticalLayout id="VLayout1">
+			<l:HorizontalLayout
+				id="HLayout1"
+				content="{tiles>/}"
+				allowWrapping="true"
+				class="sapUiContentPadding"
+			>
+
+
+				<GenericTile
+
+
+					backgroundImage="{tiles>image}"
+					id="_IDGenGenericTile1"
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+					header="{tiles>title}"
+					press="onPress(${tiles>router})"
+
+
+
+				/>
+            
+                    
+               
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+	</Page>
+</mvc:View>

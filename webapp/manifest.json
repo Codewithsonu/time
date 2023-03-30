@@ -1,0 +1,174 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "com.sap.time",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.9.0",
+      "toolsId": "970c9a76-8602-4612-9962-d73715a0d5d7"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.111.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.sap.time.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.sap.time.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false,
+        "clearTarget":true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "RouteView1",
+          "viewLevel":1,
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "first",
+          "pattern": "first",
+          "target": [
+            "Countdown"
+          ]
+        },
+        {
+          "name": "second",
+          "pattern": "second",
+          "target": [
+            "covid"
+          ]
+        },
+        {
+          "name": "second-list",
+          "pattern": "second-list",
+          "target": [
+            "Covid-List"
+          ]
+        },
+        {
+          "name": "second-pie",
+          "pattern": "second-pie",
+          "target": [
+            "Covid-Pie"
+          ]
+        },
+        {
+          "name": "third",
+          "pattern": "third",
+          "target": [
+            "Vacc"
+          ]
+        }
+
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        },
+        "Countdown": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "Countdown.Countdown",
+          "viewName": "Countdown.Countdown"
+        },
+        "covid": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "covid19.covid19",
+          "viewName": "covid19.covid19"
+        },
+        "Covid-List": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "covid19.List",
+          "viewName": "covid19.List"
+        },
+        "Covid-Pie": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "covid19.Pie",
+          "viewName": "covid19.Pie"
+        },
+        "Vacc":{
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "vacc.Vacc",
+          "viewName": "vacc.Vacc"
+        }
+
+      }
+    },
+    "rootView": {
+      "viewName": "com.sap.time.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
