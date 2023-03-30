@@ -17,6 +17,7 @@ sap.ui.define([
                 this.getView().setModel(mytilesModel, "tiles");
 
                 console.log("OnInit")
+                console.log("Haii")
 
             },
             onPress: function (oRoute) {
