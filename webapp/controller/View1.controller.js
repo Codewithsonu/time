@@ -10,14 +10,18 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("com.sap.time.controller.View1", {
+
             onInit: function () {
+
                 var mytilesModel = new JSONModel("../model/tiles.json");
 
 
                 this.getView().setModel(mytilesModel, "tiles");
 
-                console.log("OnInit")
-                console.log("Haii")
+                console.log("OnInit");
+                console.log("Haii");
+
+
 
             },
             onPress: function (oRoute) {
@@ -26,7 +30,9 @@ sap.ui.define([
 
                     
                     let selecteditem = JSON.parse(this.getView().getModel("tiles").getJSON()).find(item => { if (item.router == oRoute) { return item } })
-                    sap.m.URLHelper.redirect(selecteditem.url);
+                   sap.m.URLHelper.redirect(selecteditem.url);
+                 //  sap.m.URLHelper.triggerSms("+918341690019");
+
 
                     
                 } 
